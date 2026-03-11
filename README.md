@@ -1,0 +1,44 @@
+# AI 金融術語教練 (Multi-Agent Financial Tutor)
+
+[cite_start]這是一個基於 **n8n** 自動化工作流開發的 AI 教學系統。透過極簡的指令與多工代理（Multi-Agent）架構，協助金融新手系統化地學習抽象術語，並提供即時測驗與回饋 [cite: 5, 6, 8]。
+
+## 📖 專案概述
+[cite_start]本專案旨在解決金融術語學習門檻高、缺乏互動性的痛點 [cite: 24, 25][cite_start]。系統將任務分流，由不同的 AI Agent 擔任「教學」與「測驗」角色，形成一個可互動的輕量化學習原型 [cite: 8, 9, 36]。
+
+
+
+## 🌟 核心特性與優勢
+* **多工代理架構 (Multi-Agent Design)**：
+    * [cite_start]**Tutor Agent (教學代理)**：專精於任務導向的教學，能生成 7 日學習計畫與補充背景知識 [cite: 70, 72]。
+    * [cite_start]**Exam Agent (測驗代理)**：負責驗證學習成果，根據知識庫內容自動生成題目 [cite: 85, 87]。
+    * [cite_start]**Decision Agent (路由中樞)**：利用 If 節點精準分流使用者需求，避免角色混淆 [cite: 79, 81, 82]。
+* [cite_start]**穩定的知識來源 (RAG 前置版本)**：串接雲端資料庫作為靜態記憶（Static Memory），確保 AI 回覆內容基於預設的金融名詞，減少大模型幻覺 [cite: 100, 105, 106]。
+* [cite_start]**優化的交互體驗**：透過 System Prompt 設定明確的格式規則，確保學習計畫條列清晰、段落分明 [cite: 60, 61, 62]。
+* [cite_start]**高擴充性**：採用輕量化節點組合，適合擴大成 Line bot 或其他 SaaS 工具 [cite: 121, 123]。
+
+## 🚀 操作展示
+點擊下方連結觀看系統操作示範：
+[**操作展示連結**](https://drive.google.com/file/d/1Mu_FFNcg3SEL6hy-8L0cUQ24I6IBZqiZ/view?usp=sharing)
+
+## 🛠️ 技術棧
+* [cite_start]**自動化平台**：n8n [cite: 5]
+* [cite_start]**AI 模型**：Google Gemini, OpenRouter [cite: 93, 113]
+* [cite_start]**資料儲存**：Google Drive (預載金融術語知識庫) [cite: 11]
+
+## ⚙️ 操作說明
+[cite_start]啟動流程後，系統會透過 `When chat message received` 節點接收訊息 [cite: 12]：
+
+1. **學習模式**：輸入包含**「學」**字眼的訊息 (例如：「我想學金融」)。
+    * [cite_start]系統反應：觸發 Tutor Agent 產生專屬的 7 日學習計畫 [cite: 41, 70]。
+2. **測驗/問答模式**：輸入**不包含「學」**字眼的訊息 (例如：「開始測驗」或「請問基金是什麼？」)。
+    * [cite_start]系統反應：觸發 Exam Agent 進行隨機抽考或即時術語解答 [cite: 84, 85]。
+
+> [cite_start]**注意**：初次使用建議先以「單字」輸入（如「學」或「考」）以確保 If 節點精準解析，待系統穩定後即可使用自然語言句子 [cite: 148, 149, 156]。
+
+## 🛡️ 配置要求
+在使用此 Workflow 前，請確保以下憑證已正確配置：
+* [cite_start]**Google Drive API**：用於讀取術語資料庫 [cite: 11]。
+* [cite_start]**Google Gemini API**：用於驅動 AI Agent 模型 [cite: 93]。
+
+---
+[cite_start]*(備註：本專案為 AI 新秀計畫: Vibe coding 期末專題，由學員周秉毅製作 [cite: 2, 3])*
