@@ -20,7 +20,7 @@
 
 ## 🚀 操作展示
 
-點擊下方連結觀看系統操作示範： [操作展示連結](https://drive.google.com/file/d/1hqmvDdJxn_98ABPsUS3HKUcFltZa0Iof/view?usp=sharing)
+點擊下方連結觀看系統操作示範： [操作展示連結](https://drive.google.com/file/d/1Mu_FFNcg3SEL6hy-8L0cUQ24I6IBZqiZ/view?usp=sharing)
 
 ## 🛠️ 技術棧
 
